@@ -33,9 +33,14 @@ class Solution {
                 int circle2= couts2-last[1];
                 
              // (n1-couts1)/circle1 表示从发现第一个循环节开始(不包括第一个循环节)后所有的循环节的个数；
-             // 因为每个循环节
+             // 因为每个循环节 中包含circle2 个 s2 , 因此外面 multiply circle2
+             // 在加上之前的couts2
                 couts2 += circle2*((n1-couts1)/circle1);  
-                couts1 = couts1+((n1-couts1)/circle1)*circle1;//更新新他们
+                
+             // 循环节个数原理同上
+             // 因为每个循环节 中包含circle1 个 s1 , 因此外面 multiply circle1
+             // 在加上之前的couts1
+                couts1 += circle1*((n1-couts1)/circle1);
             }
         }
         return couts2/n2;

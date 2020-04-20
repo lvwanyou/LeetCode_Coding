@@ -115,7 +115,16 @@ public class Main{
 				int[] last = recall.get(index);
 				int cycle1 =  s1_cnt -last[0];
 				int cycle2 =  s2_cnt -last[1];
+				
+                
+	             // (n1-couts1)/circle1 表示从发现第一个循环节开始(不包括第一个循环节)后所有的循环节的个数；
+	             // 因为每个循环节 中包含circle2 个 s2 , 因此外面 multiply circle2
+	             // 在加上之前的couts2
 				s2_cnt += cycle2*((n1-s1_cnt)/cycle1);
+				
+	             // 循环节个数原理同上
+	             // 因为每个循环节 中包含circle1 个 s1 , 因此外面 multiply circle1
+	             // 在加上之前的couts1
 				s1_cnt = s1_cnt+((n1-s1_cnt)/cycle1)*cycle1;//更新新他们
 
 			}else{
