@@ -86,8 +86,8 @@ s2 ="ab",n2 = 2
 }*/
 
 
-public class Main{
-	public static int main(String args[]) {
+public class main111{
+	public static int main111(String args[]) {
 		String s1 ="abaacdbac";
 		int n1 = 100;
 		String s2 ="adcbd";
